@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vogue Frames — Premium custom frames, curated posters, and luxury accessories. Transforming spaces with premium crafted pieces." />
+  <meta property="og:title" content="Vogue Frames — Premium Frames & Posters" />
+  <meta property="og:description" content="Elevate your space with premium crafted frames, curated art, and luxury accessories." />
+  <title>Vogue Frames — Premium Frames & Posters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <div class="logo-mark">VF</div>
+        <span class="logo-text">vogue.frames</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#collections" class="nav-link">Collections</a></li>
+        <li><a href="#products" class="nav-link">Shop</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="search-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="nav-icon-btn" id="cart-btn" aria-label="Cart" onclick="toggleCart()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobile()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="#collections" class="mobile-link" onclick="closeMobile()">Collections</a>
+      <a href="#products" class="mobile-link" onclick="closeMobile()">Shop</a>
+      <a href="#about" class="mobile-link" onclick="closeMobile()">About</a>
+      <a href="#contact" class="mobile-link" onclick="closeMobile()">Contact</a>
+      <a href="#contact" class="mobile-link mobile-cta" onclick="closeMobile()">DM to Order</a>
+    </div>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="hero_frames.jpg" alt="Premium Vogue Frames Gallery" class="hero-bg-img" />
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <!-- Floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge glass-pill">
+        <span class="badge-dot"></span>
+        New Collection Available
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Art that</span>
+        <span class="title-line title-gradient">Defines</span>
+        <span class="title-line">Your Space.</span>
+      </h1>
+      <p class="hero-subtitle">Premium custom frames, curated posters &amp; luxury accessories — crafted to transform every wall into a statement.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary liquid-btn" id="hero-shop-btn">
+          <span>Shop Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#collections" class="btn btn-glass" id="hero-collections-btn">
+          <span>View Collections</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item glass-stat">
+          <span class="stat-num">547</span>
+          <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item glass-stat">
+          <span class="stat-num">17+</span>
+          <span class="stat-label">Posts</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item glass-stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Custom</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-inner" id="marqueeInner">
+        <span class="marquee-item">Premium Frames</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Custom Posters</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Luxury Accessories</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Jewelry</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Gallery Walls</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Handcrafted Quality</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Premium Frames</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Custom Posters</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Luxury Accessories</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Jewelry</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Gallery Walls</span>
+        <span class="marquee-dot">✦</span>
+        <span class="marquee-item">Handcrafted Quality</span>
+        <span class="marquee-dot">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COLLECTIONS ========== -->
+  <section class="collections" id="collections">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Categories</div>
+        <h2 class="section-title">Our Collections</h2>
+        <p class="section-subtitle">Each piece tells a story. Discover our curated range of premium products.</p>
+      </div>
+
+      <div class="collections-grid">
+        <div class="collection-card large reveal" data-delay="0">
+          <div class="card-img-wrap">
+            <img src="hero_frames.jpg" alt="Custom Frames Collection" loading="lazy" />
+          </div>
+          <div class="card-glass-overlay">
+            <div class="card-content">
+              <div class="card-tag">Bestseller</div>
+              <h3 class="card-title">Custom Frames</h3>
+              <p class="card-desc">Gold, black, and walnut frames crafted to perfection.</p>
+              <a href="#products" class="card-btn">
+                <span>Explore</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="collection-card reveal" data-delay="100">
+          <div class="card-img-wrap">
+            <img src="product_posters.jpg" alt="Art Posters Collection" loading="lazy" />
+          </div>
+          <div class="card-glass-overlay">
+            <div class="card-content">
+              <div class="card-tag">New</div>
+              <h3 class="card-title">Art Posters</h3>
+              <p class="card-desc">Curated prints from car art to minimalist aesthetics.</p>
+              <a href="#products" class="card-btn">
+                <span>Explore</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="collection-card reveal" data-delay="200">
+          <div class="card-img-wrap">
+            <img src="product_jewelry.jpg" alt="Jewelry Collection" loading="lazy" />
+          </div>
+          <div class="card-glass-overlay">
+            <div class="card-content">
+              <div class="card-tag">Luxury</div>
+              <h3 class="card-title">Jewelry</h3>
+              <p class="card-desc">Elegant gold pieces designed for everyday elegance.</p>
+              <a href="#products" class="card-btn">
+                <span>Explore</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="collection-card reveal" data-delay="300">
+          <div class="card-img-wrap">
+            <img src="product_accessories.jpg" alt="Accessories Collection" loading="lazy" />
+          </div>
+          <div class="card-glass-overlay">
+            <div class="card-content">
+              <div class="card-tag">Exclusive</div>
+              <h3 class="card-title">Accessories</h3>
+              <p class="card-desc">Sunglasses and lifestyle accessories with a premium edge.</p>
+              <a href="#products" class="card-btn">
+                <span>Explore</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS ========== -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Shop</div>
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Handpicked pieces from our latest drops. Limited quantities available.</p>
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="filter-wrap reveal">
+        <div class="filter-pills" id="filterPills">
+          <button class="filter-pill active" data-filter="all" id="filter-all">All</button>
+          <button class="filter-pill" data-filter="frames" id="filter-frames">Frames</button>
+          <button class="filter-pill" data-filter="posters" id="filter-posters">Posters</button>
+          <button class="filter-pill" data-filter="jewelry" id="filter-jewelry">Jewelry</button>
+          <button class="filter-pill" data-filter="accessories" id="filter-accessories">Accessories</button>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+
+        <div class="product-card reveal" data-category="frames" data-delay="0">
+          <div class="product-img-wrap">
+            <img src="hero_frames.jpg" alt="Gold Gallery Frame" loading="lazy" />
+            <div class="product-img-overlay">
+              <button class="quick-add-btn" onclick="addToCart('Gold Gallery Frame', 1499)" id="qa-1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Quick Add
+              </button>
+            </div>
+            <div class="product-badge">Bestseller</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Frames</div>
+            <h3 class="product-name">Gold Gallery Frame</h3>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">&#8377;1,499</span>
+              </div>
+              <button class="product-cart-btn" onclick="addToCart('Gold Gallery Frame', 1499)" id="cart-1" aria-label="Add to cart">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="posters" data-delay="100">
+          <div class="product-img-wrap">
+            <img src="product_posters.jpg" alt="Porsche 911 Art Print" loading="lazy" />
+            <div class="product-img-overlay">
+              <button class="quick-add-btn" onclick="addToCart('Porsche 911 Art Print', 799)" id="qa-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Quick Add
+              </button>
+            </div>
+            <div class="product-badge new">New</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Posters</div>
+            <h3 class="product-name">Porsche 911 Art Print</h3>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">&#8377;799</span>
+              </div>
+              <button class="product-cart-btn" onclick="addToCart('Porsche 911 Art Print', 799)" id="cart-2" aria-label="Add to cart">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="jewelry" data-delay="200">
+          <div class="product-img-wrap">
+            <img src="product_jewelry.jpg" alt="Gold Herringbone Chain" loading="lazy" />
+            <div class="product-img-overlay">
+              <button class="quick-add-btn" onclick="addToCart('Gold Herringbone Chain', 2499)" id="qa-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Quick Add
+              </button>
+            </div>
+            <div class="product-badge luxury">Luxury</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Jewelry</div>
+            <h3 class="product-name">Gold Herringbone Chain</h3>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">&#8377;2,499</span>
+              </div>
+              <button class="product-cart-btn" onclick="addToCart('Gold Herringbone Chain', 2499)" id="cart-3" aria-label="Add to cart">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="accessories" data-delay="300">
+          <div class="product-img-wrap">
+            <img src="product_accessories.jpg" alt="Tortoise Shell Sunglasses" loading="lazy" />
+            <div class="product-img-overlay">
+              <button class="quick-add-btn" onclick="addToCart('Tortoise Shell Sunglasses', 1899)" id="qa-4">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Quick Add
+              </button>
+            </div>
+            <div class="product-badge exclusive">Exclusive</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Accessories</div>
+            <h3 class="product-name">Tortoise Shell Sunglasses</h3>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">&#8377;1,899</span>
+              </div>
+              <button class="product-cart-btn" onclick="addToCart('Tortoise Shell Sunglasses', 1899)" id="cart-4" aria-label="Add to cart">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="frames" data-delay="400">
+          <div class="product-img-wrap">
+            <img src="collection_banner.jpg" alt="Gallery Wall Bundle" loading="lazy" />
+            <div class="product-img-overlay">
+              <button class="quick-add-btn" onclick="addToCart('Gallery Wall Bundle', 3999)" id="qa-5">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Quick Add
+              </button>
+            </div>
+            <div class="product-badge">Bundle</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Frames</div>
+            <h3 class="product-name">Gallery Wall Bundle</h3>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">&#8377;3,999</span>
+                <span class="price-original">&#8377;5,499</span>
+              </div>
+              <button class="product-cart-btn" onclick="addToCart('Gallery Wall Bundle', 3999)" id="cart-5" aria-label="Add to cart">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="jewelry" data-delay="500">
+          <div class="product-img-wrap">
+            <img src="product_jewelry.jpg" alt="Minimalist Gold Ring" loading="lazy" />
+            <div class="product-img-overlay">
+              <button class="quick-add-btn" onclick="addToCart('Minimalist Gold Ring', 1299)" id="qa-6">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Quick Add
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Jewelry</div>
+            <h3 class="product-name">Minimalist Gold Ring</h3>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">&#8377;1,299</span>
+              </div>
+              <button class="product-cart-btn" onclick="addToCart('Minimalist Gold Ring', 1299)" id="cart-6" aria-label="Add to cart">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BANNER CTA ========== -->
+  <section class="cta-banner reveal">
+    <div class="cta-banner-bg">
+      <img src="collection_banner.jpg" alt="Gallery Wall" />
+      <div class="cta-banner-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="cta-banner-content">
+        <div class="section-badge">Custom Orders</div>
+        <h2 class="cta-banner-title">Your Vision.<br/>Our Craft.</h2>
+        <p class="cta-banner-subtitle">Every piece is made to order. DM us on Instagram to start your custom order today.</p>
+        <a href="#contact" class="btn btn-primary liquid-btn" id="cta-order-btn">
+          <span>Start Custom Order</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-img-stack">
+            <div class="about-img-main">
+              <img src="hero_frames.jpg" alt="Vogue Frames craftsmanship" loading="lazy" />
+            </div>
+            <div class="about-img-float glass-card-float">
+              <img src="product_jewelry.jpg" alt="Jewelry detail" loading="lazy" />
+            </div>
+            <div class="about-stats-float glass-card-float-2">
+              <div class="float-stat">
+                <span class="float-num">100%</span>
+                <span class="float-label">Custom Made</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal" data-delay="150">
+          <div class="section-badge">Our Story</div>
+          <h2 class="section-title">Transforming Spaces<br/>with Premium Pieces</h2>
+          <p class="about-body">At Vogue Frames, we believe every space deserves a story. We craft premium custom frames, curate exceptional art prints, and design jewelry that speaks without words.</p>
+          <p class="about-body">From a Porsche blueprint above your desk to a gold chain that catches every light — we transform ordinary moments into extraordinary statements.</p>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon">&#10022;</div>
+              <div>
+                <div class="feature-title">Handcrafted Quality</div>
+                <div class="feature-desc">Every frame made with care and precision</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#10022;</div>
+              <div>
+                <div class="feature-title">Custom Orders Welcome</div>
+                <div class="feature-desc">DM to customize any piece to your vision</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#10022;</div>
+              <div>
+                <div class="feature-title">Premium Materials</div>
+                <div class="feature-desc">Gold, walnut, and archival-quality prints only</div>
+              </div>
+            </div>
+          </div>
+          <a href="https://instagram.com/vogueframes" target="_blank" class="btn btn-outline" id="about-ig-btn">Follow on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Reviews</div>
+        <h2 class="section-title">What They Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-card reveal" data-delay="0">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"The Porsche frame arrived even better than expected. The quality is insane — it's the centerpiece of my room now."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AK</div>
+            <div>
+              <div class="author-name">Aryan K.</div>
+              <div class="author-handle">@aryan.kxrma</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card reveal" data-delay="150">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Ordered a custom gallery wall set — absolutely premium. The gold frames are exactly what I imagined. Will order again!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SR</div>
+            <div>
+              <div class="author-name">Sia R.</div>
+              <div class="author-handle">@siar.edits</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card reveal" data-delay="300">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"The herringbone chain is so beautiful. Got so many compliments. Vogue Frames really delivers on the luxury promise."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">NM</div>
+            <div>
+              <div class="author-name">Nisha M.</div>
+              <div class="author-handle">@nisha.mode</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner glass-card-contact reveal">
+        <div class="contact-content">
+          <div class="section-badge">Get in Touch</div>
+          <h2 class="section-title">Ready to Order?</h2>
+          <p class="contact-body">All orders are custom — DM us on Instagram or fill the form. Payment is made at delivery confirmation.</p>
+          <div class="contact-links">
+            <a href="https://instagram.com/vogueframes" target="_blank" class="contact-social-link" id="contact-ig">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              @vogueframes
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" class="form-input" placeholder="Email Address" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="WhatsApp / Phone" />
+          </div>
+          <div class="form-group">
+            <select id="category" name="category" class="form-input form-select">
+              <option value="" disabled selected>What are you interested in?</option>
+              <option value="frames">Custom Frames</option>
+              <option value="posters">Art Posters</option>
+              <option value="jewelry">Jewelry</option>
+              <option value="accessories">Accessories</option>
+              <option value="bundle">Gallery Wall Bundle</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us about your order..." rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary liquid-btn full-width" id="submit-form-btn">
+            <span>Send Inquiry</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-mark">VF</div>
+            <span class="logo-text">vogue.frames</span>
+          </div>
+          <p class="footer-tagline">Transforming spaces &amp; styles<br/>with premium crafted pieces. &#10022;</p>
+          <a href="https://instagram.com/vogueframes" target="_blank" class="footer-ig-link" id="footer-ig">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @vogueframes
+          </a>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Shop</h4>
+          <a href="#products" class="footer-link">Custom Frames</a>
+          <a href="#products" class="footer-link">Art Posters</a>
+          <a href="#products" class="footer-link">Jewelry</a>
+          <a href="#products" class="footer-link">Accessories</a>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Info</h4>
+          <a href="#about" class="footer-link">About Us</a>
+          <a href="#contact" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">Store Policy</a>
+          <a href="#" class="footer-link">Custom Orders</a>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Policy</h4>
+          <p class="footer-policy-note">Payment is non-refundable once order is confirmed. All pieces are custom made to order.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&#169; 2025 Vogue Frames. All rights reserved.</span>
+        <span>Made with &#10022; for premium spaces</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== CART DRAWER ========== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Cart</h3>
+      <button class="cart-close" onclick="toggleCart()" id="cart-close-btn" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <p>Your cart is empty</p>
+        <span>Add some premium pieces!</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">&#8377;0</span>
+      </div>
+      <a href="#contact" class="btn btn-primary liquid-btn full-width" onclick="toggleCart()" id="checkout-btn">
+        <span>Proceed to Order</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toastMsg">Added to cart!</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -341,11 +341,24 @@ body:has(a:hover) .cursor-follower, body:has(button:hover) .cursor-follower {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(8,8,8,0.3) 0%,
-    rgba(8,8,8,0.2) 40%,
-    rgba(8,8,8,0.7) 80%,
+    rgba(8,8,8,0.72) 0%,
+    rgba(8,8,8,0.56) 35%,
+    rgba(8,8,8,0.78) 75%,
     rgba(8,8,8,1) 100%
   );
+}
+
+/* Contrast shield behind hero text */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 36%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(860px, 94vw);
+  height: 480px;
+  background: radial-gradient(ellipse at center, rgba(8,8,8,0.75) 0%, rgba(8,8,8,0) 75%);
+  pointer-events: none;
+  z-index: 5;
 }
 
 /* Floating orbs — ambient light effect */
@@ -381,25 +394,71 @@ body:has(a:hover) .cursor-follower, body:has(button:hover) .cursor-follower {
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  font-size: 13px;
+  gap: 11px;
+  padding: 9px 20px 9px 14px;
+  font-size: 14px;
   font-weight: 500;
-  color: var(--text-2);
+  color: #ffffff;
   margin-bottom: 28px;
+  background: rgba(12, 12, 16, 0.92);
+  backdrop-filter: blur(32px) saturate(220%);
+  -webkit-backdrop-filter: blur(32px) saturate(220%);
+  border: 1px solid rgba(201, 169, 110, 0.32);
+  border-radius: var(--radius-full);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85), 0 0 24px rgba(201, 169, 110, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.35);
   animation: hero-in 1.2s 0.1s var(--ease-out) both;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s var(--ease-spring), border-color 0.25s, box-shadow 0.25s;
+}
+
+.hero-badge:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(201, 169, 110, 0.65);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.9), 0 0 30px rgba(201, 169, 110, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: #ffffff;
 }
 
 .badge-dot {
-  width: 7px; height: 7px;
+  width: 8px; height: 8px;
   border-radius: 50%;
-  background: #4ade80;
-  box-shadow: 0 0 0 2px rgba(74,222,128,0.3);
+  background: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34,197,94,0.35), 0 0 10px rgba(34,197,94,0.8);
   animation: pulse-green 2s ease-in-out infinite;
+  flex-shrink: 0;
 }
-@keyframes pulse-green {
-  0%,100% { box-shadow: 0 0 0 2px rgba(74,222,128,0.3); }
-  50%      { box-shadow: 0 0 0 6px rgba(74,222,128,0.1); }
+
+.badge-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gold-light);
+  background: rgba(201, 169, 110, 0.18);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  line-height: 1.2;
+}
+
+.badge-divider {
+  width: 1px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 0 1px;
+}
+
+.badge-title {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.badge-sparkle {
+  color: var(--gold-light);
+  font-size: 14px;
+  filter: drop-shadow(0 0 6px rgba(201, 169, 110, 0.7));
 }
 
 .hero-title {

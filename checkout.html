@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Complete your order with vogue.frames._ — Fast, secure delivery across India." />
+  <title>Checkout — vogue.frames._</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+<body>
+
+  <!-- ========== TOP CHECKOUT NAVBAR ========== -->
+  <header class="checkout-header">
+    <div class="container checkout-header-inner">
+      <a href="index.html" class="nav-logo" id="checkout-logo">
+        <div class="logo-mark">VF</div>
+        <span class="logo-text">vogue.frames._</span>
+      </a>
+
+      <div class="checkout-security-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>256-Bit SSL Secure Checkout</span>
+      </div>
+
+      <a href="index.html#products" class="checkout-back-link" id="checkoutBackLink">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Back to Shop</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CHECKOUT CONTENT ========== -->
+  <main class="checkout-main">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div class="checkout-breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="index.html#products">Shop</a>
+        <span class="sep">›</span>
+        <span class="current" id="chkProductNameBreadcrumb">Checkout</span>
+      </div>
+
+      <div class="checkout-page-title-row">
+        <h1 class="checkout-page-title">Complete Your Order</h1>
+        <p class="checkout-page-subtitle">Fill in your delivery address below. Your selected product is pre-filled.</p>
+      </div>
+
+      <!-- Two-column grid -->
+      <div class="checkout-grid">
+
+        <!-- LEFT COLUMN: Order Form -->
+        <div class="checkout-form-col">
+          <form id="orderForm" onsubmit="handleOrderSubmit(event)" novalidate>
+
+            <!-- Hidden Product Fields -->
+            <input type="hidden" id="orderProductId" name="productId" value="" />
+            <input type="hidden" id="orderProductName" name="productName" value="" />
+            <input type="hidden" id="orderProductPrice" name="productPrice" value="0" />
+            <input type="hidden" id="orderQty" name="quantity" value="1" />
+            <input type="hidden" id="orderTotalAmount" name="totalAmount" value="0" />
+
+            <!-- SECTION 1: Customer Details -->
+            <div class="form-card">
+              <div class="form-card-header">
+                <div class="step-num">1</div>
+                <div>
+                  <h2 class="form-card-title">Customer Details</h2>
+                  <p class="form-card-sub">Please enter your contact information for order confirmation.</p>
+                </div>
+              </div>
+
+              <!-- Name -->
+              <div class="form-group">
+                <label for="custName" class="form-label">
+                  <span>Name</span>
+                  <span class="req">*</span>
+                </label>
+                <div class="input-wrap">
+                  <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <input type="text" id="custName" name="custName" class="form-input" placeholder="Enter your full name" required autocomplete="name" />
+                </div>
+                <span class="input-hint">Full name for order dispatch and delivery label</span>
+                <span class="field-error" id="errName">Please enter your full name</span>
+              </div>
+
+              <!-- Phone no -->
+              <div class="form-group">
+                <label for="custPhone" class="form-label">
+                  <span>Phone no</span>
+                  <span class="req">*</span>
+                </label>
+                <div class="input-wrap">
+                  <span class="phone-prefix">+91</span>
+                  <input type="tel" id="custPhone" name="custPhone" class="form-input has-prefix" placeholder="10-digit mobile number (e.g. 98765 43210)" maxlength="10" required autocomplete="tel" />
+                </div>
+                <span class="input-hint">Used for order confirmation &amp; live delivery tracking via WhatsApp / SMS</span>
+                <span class="field-error" id="errPhone">Please enter a valid 10-digit mobile number</span>
+              </div>
+            </div>
+
+            <!-- SECTION 2: Delivery Address -->
+            <div class="form-card">
+              <div class="form-card-header">
+                <div class="step-num">2</div>
+                <div>
+                  <h2 class="form-card-title">Delivery Address</h2>
+                  <p class="form-card-sub">Detailed address ensuring fast &amp; accurate doorstep delivery.</p>
+                </div>
+              </div>
+
+              <!-- Address like street house no. -->
+              <div class="form-group">
+                <label for="custAddress" class="form-label">
+                  <span>Address like street, house no.</span>
+                  <span class="req">*</span>
+                </label>
+                <div class="input-wrap">
+                  <textarea id="custAddress" name="custAddress" class="form-textarea form-address-input" rows="3" placeholder="House / Flat No., Floor, Building / Society Name, Street / Road, Area" required autocomplete="street-address"></textarea>
+                </div>
+                <span class="input-hint">Include house/flat number, building or society name, and street for accurate delivery</span>
+                <span class="field-error" id="errAddress">Please enter your complete street &amp; house address</span>
+              </div>
+
+              <!-- Landmark {optional} -->
+              <div class="form-group">
+                <label for="custLandmark" class="form-label">
+                  <span>Landmark</span>
+                  <span class="opt">{optional}</span>
+                </label>
+                <div class="input-wrap">
+                  <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <input type="text" id="custLandmark" name="custLandmark" class="form-input" placeholder="e.g. Near City Mall / Opposite Metro Station" />
+                </div>
+                <span class="input-hint">Nearby famous place or landmark to guide delivery courier</span>
+              </div>
+
+              <!-- Pincode, City, State in a structured row -->
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label for="custPincode" class="form-label">
+                    <span>Pincode</span>
+                    <span class="req">*</span>
+                  </label>
+                  <div class="input-wrap">
+                    <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <input type="text" id="custPincode" name="custPincode" class="form-input" placeholder="6-digit Pincode" maxlength="6" required autocomplete="postal-code" />
+                  </div>
+                  <span class="input-hint">6-digit PIN</span>
+                  <span class="field-error" id="errPincode">Enter 6-digit Pincode</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="custCity" class="form-label">
+                    <span>City</span>
+                    <span class="req">*</span>
+                  </label>
+                  <div class="input-wrap">
+                    <input type="text" id="custCity" name="custCity" class="form-input" placeholder="e.g. Mumbai / Delhi" required autocomplete="address-level2" />
+                  </div>
+                  <span class="field-error" id="errCity">Enter city</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="custState" class="form-label">
+                    <span>State</span>
+                    <span class="req">*</span>
+                  </label>
+                  <div class="input-wrap">
+                    <select id="custState" name="custState" class="form-select" required autocomplete="address-level1">
+                      <option value="">Select State</option>
+                      <option value="Delhi">Delhi</option>
+                      <option value="Maharashtra">Maharashtra</option>
+                      <option value="Karnataka">Karnataka</option>
+                      <option value="Uttar Pradesh">Uttar Pradesh</option>
+                      <option value="Haryana">Haryana</option>
+                      <option value="Punjab">Punjab</option>
+                      <option value="Gujarat">Gujarat</option>
+                      <option value="Rajasthan">Rajasthan</option>
+                      <option value="Tamil Nadu">Tamil Nadu</option>
+                      <option value="Telangana">Telangana</option>
+                      <option value="West Bengal">West Bengal</option>
+                      <option value="Kerala">Kerala</option>
+                      <option value="Madhya Pradesh">Madhya Pradesh</option>
+                      <option value="Bihar">Bihar</option>
+                      <option value="Jammu & Kashmir">Jammu &amp; Kashmir</option>
+                      <option value="Assam">Assam</option>
+                      <option value="Goa">Goa</option>
+                      <option value="Himachal Pradesh">Himachal Pradesh</option>
+                      <option value="Uttarakhand">Uttarakhand</option>
+                      <option value="Chandigarh">Chandigarh</option>
+                      <option value="Other">Other State / UT</option>
+                    </select>
+                  </div>
+                  <span class="field-error" id="errState">Select state</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 3: Customization Notes (Conditional) -->
+            <div class="form-card" id="customizationCard">
+              <div class="form-card-header">
+                <div class="step-num custom-num">✦</div>
+                <div>
+                  <h2 class="form-card-title" id="customNotesTitle">Customization Requests</h2>
+                  <p class="form-card-sub" id="customNotesSub">Tell us your preferred cars, frame color, or special requests.</p>
+                </div>
+              </div>
+
+              <div class="custom-card-callout" id="customCallout">
+                <div class="callout-badge">🎨 100% CUSTOMIZABLE PIECE</div>
+                <p>This product is made to order! Tell us your specific preferences below (favorite car models, personal photo details, custom sizing, or frame finish). We will verify your request before crafting!</p>
+              </div>
+
+              <div class="form-group">
+                <label for="custNotes" class="form-label" id="custNotesLabel">Customization Details / Special Instructions</label>
+                <textarea id="custNotes" name="custNotes" class="form-textarea" rows="3" placeholder="e.g. Please include Porsche 911 GT3 RS, Ferrari F40, and black frame color..."></textarea>
+                <span class="textarea-hint">Optional: You can also DM us on Instagram (@vogue.frames._) after placing this order.</span>
+              </div>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <div class="checkout-submit-wrap">
+              <button type="submit" class="btn btn-primary liquid-btn full-width place-order-btn" id="btnPlaceOrder">
+                <span>Place Order Now</span>
+                <span class="btn-total-pill" id="btnOrderTotal">&#8377;0</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </button>
+              <p class="order-policy-notice">
+                🔒 Guaranteed safe checkout. Once you place your order, you will be redirected to WhatsApp (8899928634) to confirm.
+              </p>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- RIGHT COLUMN: Order Summary -->
+        <div class="checkout-summary-col">
+          <div class="order-summary-card">
+            <h3 class="summary-title">Order Summary</h3>
+
+            <!-- Multi-Product Cart List -->
+            <div class="summary-products-list" id="summaryProductsList">
+              <!-- Dynamically populated from VFCart -->
+            </div>
+
+            <!-- Empty cart state inside checkout -->
+            <div class="checkout-empty-state" id="checkoutEmptyState" style="display: none;">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <p>Your cart is empty.</p>
+              <a href="index.html#products" class="btn btn-glass" style="margin-top: 8px;">Browse Products</a>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="summary-cost-list">
+              <div class="cost-row">
+                <span class="cost-label">Item Total (<span id="summaryQtyLabel">1</span> item)</span>
+                <span class="cost-val" id="sumSubtotal">&#8377;0</span>
+              </div>
+              <div class="cost-row">
+                <span class="cost-label">Delivery Charges</span>
+                <span class="cost-val free-delivery">FREE</span>
+              </div>
+              <div class="cost-row">
+                <span class="cost-label">Estimated Taxes</span>
+                <span class="cost-val">Included</span>
+              </div>
+              <div class="cost-divider"></div>
+              <div class="cost-row total-row">
+                <span class="total-label">Total Amount</span>
+                <span class="total-val" id="sumTotal">&#8377;0</span>
+              </div>
+            </div>
+
+            <!-- Perks & Guarantees -->
+            <div class="summary-perks">
+              <div class="perk-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Inspected &amp; Hand-Packed Securely</span>
+              </div>
+              <div class="perk-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <span>Free Express Shipping Across India</span>
+              </div>
+              <div class="perk-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <span>Direct Updates from @vogue.frames._</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== ORDER SUCCESS MODAL ========== -->
+  <div class="order-modal-overlay" id="orderSuccessModal">
+    <div class="order-modal-dialog">
+      <div class="success-icon-wrap">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+
+      <span class="success-badge">ORDER SUBMITTED</span>
+      <h2 class="modal-title">Please Confirm Your Order</h2>
+      <p class="modal-subtitle">Your order has been recorded! To complete confirmation and get payment details, please tap <strong>"Confirm Order"</strong> below to connect with us directly on WhatsApp (8899928634).</p>
+
+      <!-- Order ID Pill -->
+      <div class="order-id-pill">
+        <span>Order Reference:</span>
+        <strong id="modalOrderId">#VF-XXXXX</strong>
+      </div>
+
+      <!-- Order Summary Card inside modal -->
+      <div class="modal-details-card">
+        <!-- Multi-item list in modal -->
+        <div class="modal-items-summary" id="modalItemsSummary"></div>
+
+        <div class="modal-detail-row">
+          <span class="m-label">Total Items:</span>
+          <span class="m-val" id="modalTotalItems">1</span>
+        </div>
+        <div class="modal-detail-row">
+          <span class="m-label">Deliver To:</span>
+          <span class="m-val" id="modalCustomerName">—</span>
+        </div>
+        <div class="modal-detail-row">
+          <span class="m-label">Contact:</span>
+          <span class="m-val" id="modalCustomerPhone">—</span>
+        </div>
+        <div class="modal-detail-row">
+          <span class="m-label">Address:</span>
+          <span class="m-val" id="modalAddress">—</span>
+        </div>
+        <div class="modal-detail-row total-row">
+          <span class="m-label">Total Amount:</span>
+          <strong class="m-val gold-total" id="modalTotal">&#8377;0</strong>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="modal-actions">
+        <a href="#" id="modalWhatsAppBtn" target="_blank" class="btn btn-primary liquid-btn full-width">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Confirm Order</span>
+        </a>
+        <a href="index.html#products" class="btn btn-glass full-width">
+          <span>Back to Shop</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="products-data.js"></script>
+  <script src="cart.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

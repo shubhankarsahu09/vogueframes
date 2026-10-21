@@ -14,10 +14,6 @@
 </head>
 <body>
 
-  <!-- ========== CURSOR ========== -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
-
   <!-- ========== NAV ========== -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -235,9 +231,9 @@
   <section class="products" id="products">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-badge">Shop</div>
+        <div class="section-badge">100% Customizable Collection</div>
         <h2 class="section-title">Featured Products</h2>
-        <p class="section-subtitle">Handpicked pieces from our latest drops. Limited quantities available.</p>
+        <p class="section-subtitle">Every piece is 100% customizable — pick your favorite cars, personal photos, frame colors & sizes. Handcrafted to order.</p>
       </div>
 
       <!-- Filter Pills -->
@@ -253,152 +249,139 @@
 
       <div class="products-grid" id="productsGrid">
 
-        <div class="product-card reveal" data-category="frames" data-delay="0">
+        <!-- 45 Car Posters Pack — FIRST POSTER PRODUCT -->
+        <div class="product-card reveal" data-category="posters" data-delay="0" data-url="product.html?id=45-posters-pack" onclick="window.location.href='product.html?id=45-posters-pack'">
           <div class="product-img-wrap">
-            <img src="hero_frames.jpg" alt="Gold Gallery Frame" loading="lazy" />
-            <div class="product-img-overlay">
-              <button class="quick-add-btn" onclick="addToCart('Gold Gallery Frame', 1499)" id="qa-1">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Quick Add
-              </button>
-            </div>
-            <div class="product-badge">Bestseller</div>
+            <img src="product_45posters.jpg" alt="45 Posters Pack" loading="lazy" />
+            <div class="product-badge new">45 Pcs</div>
           </div>
           <div class="product-info">
-            <div class="product-category">Frames</div>
-            <h3 class="product-name">Gold Gallery Frame</h3>
+            <div class="product-category">
+              <span>Posters</span>
+              <span class="custom-badge-inline">✦ Customizable</span>
+            </div>
+            <h3 class="product-name"><a href="product.html?id=45-posters-pack" class="product-name-link">45 Posters Pack</a></h3>
             <div class="product-footer">
               <div class="product-price">
-                <span class="price-current">&#8377;1,499</span>
+                <span class="price-current">&#8377;399</span>
               </div>
-              <button class="product-cart-btn" onclick="addToCart('Gold Gallery Frame', 1499)" id="cart-1" aria-label="Add to cart">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </button>
+              <div class="product-view-btn" aria-label="View product details">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="product-card reveal" data-category="posters" data-delay="100">
+        <!-- 24 Posters Pack -->
+        <div class="product-card reveal" data-category="posters" data-delay="100" data-url="product.html?id=24-posters-pack" onclick="window.location.href='product.html?id=24-posters-pack'">
           <div class="product-img-wrap">
-            <img src="product_posters.jpg" alt="Porsche 911 Art Print" loading="lazy" />
-            <div class="product-img-overlay">
-              <button class="quick-add-btn" onclick="addToCart('Porsche 911 Art Print', 799)" id="qa-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Quick Add
-              </button>
-            </div>
-            <div class="product-badge new">New</div>
+            <img src="product_24posters.jpg" alt="24 Posters Pack" loading="lazy" />
+            <div class="product-badge new">24 Pcs</div>
           </div>
           <div class="product-info">
-            <div class="product-category">Posters</div>
-            <h3 class="product-name">Porsche 911 Art Print</h3>
+            <div class="product-category">
+              <span>Posters</span>
+              <span class="custom-badge-inline">✦ Customizable</span>
+            </div>
+            <h3 class="product-name"><a href="product.html?id=24-posters-pack" class="product-name-link">24 Posters Pack</a></h3>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">&#8377;299</span>
+              </div>
+              <div class="product-view-btn" aria-label="View product details">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Porsche Frame -->
+        <div class="product-card reveal" data-category="frames" data-delay="200" data-url="product.html?id=porsche-frame" onclick="window.location.href='product.html?id=porsche-frame'">
+          <div class="product-img-wrap">
+            <img src="product_frame1.jpg" alt="Porsche Frame" loading="lazy" />
+            <div class="product-badge">Frames</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">
+              <span>Frames</span>
+              <span class="custom-badge-inline">✦ Customizable</span>
+            </div>
+            <h3 class="product-name"><a href="product.html?id=porsche-frame" class="product-name-link">Porsche Frame</a></h3>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">&#8377;649</span>
+              </div>
+              <div class="product-view-btn" aria-label="View product details">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Combo Frame -->
+        <div class="product-card reveal" data-category="frames" data-delay="300" data-url="product.html?id=combo-frame" onclick="window.location.href='product.html?id=combo-frame'">
+          <div class="product-img-wrap">
+            <img src="product_combo_frame.jpg" alt="Combo Frame" loading="lazy" />
+            <div class="product-badge">Bundle</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">
+              <span>Frames</span>
+              <span class="custom-badge-inline">✦ Customizable</span>
+            </div>
+            <h3 class="product-name"><a href="product.html?id=combo-frame" class="product-name-link">Combo Frame</a></h3>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-current">&#8377;2,199</span>
+              </div>
+              <div class="product-view-btn" aria-label="View product details">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Posters Pack + Big Poster -->
+        <div class="product-card reveal" data-category="posters" data-delay="200" data-url="product.html?id=posters-pack-big-poster" onclick="window.location.href='product.html?id=posters-pack-big-poster'">
+          <div class="product-img-wrap">
+            <img src="product_bigposter_pack.jpg" alt="Posters Pack + Big Poster" loading="lazy" />
+            <div class="product-badge new">Best Value</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">
+              <span>Posters</span>
+              <span class="custom-badge-inline">✦ Customizable</span>
+            </div>
+            <h3 class="product-name"><a href="product.html?id=posters-pack-big-poster" class="product-name-link">Posters Pack + Big Poster</a></h3>
             <div class="product-footer">
               <div class="product-price">
                 <span class="price-current">&#8377;799</span>
               </div>
-              <button class="product-cart-btn" onclick="addToCart('Porsche 911 Art Print', 799)" id="cart-2" aria-label="Add to cart">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </button>
+              <div class="product-view-btn" aria-label="View product details">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="product-card reveal" data-category="jewelry" data-delay="200">
+        <!-- Kashmiri Bangles — FIRST JEWELRY PRODUCT -->
+        <div class="product-card reveal" data-category="jewelry" data-delay="300" data-url="product.html?id=kashmiri-bangles" onclick="window.location.href='product.html?id=kashmiri-bangles'">
           <div class="product-img-wrap">
-            <img src="product_jewelry.jpg" alt="Gold Herringbone Chain" loading="lazy" />
-            <div class="product-img-overlay">
-              <button class="quick-add-btn" onclick="addToCart('Gold Herringbone Chain', 2499)" id="qa-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Quick Add
-              </button>
-            </div>
-            <div class="product-badge luxury">Luxury</div>
+            <img src="product_kashmiri_bangles.jpg" alt="Kashmiri Bangles" loading="lazy" />
+            <div class="product-badge luxury">Handcrafted</div>
           </div>
           <div class="product-info">
-            <div class="product-category">Jewelry</div>
-            <h3 class="product-name">Gold Herringbone Chain</h3>
+            <div class="product-category">
+              <span>Jewelry</span>
+            </div>
+            <h3 class="product-name"><a href="product.html?id=kashmiri-bangles" class="product-name-link">Kashmiri Bangles</a></h3>
             <div class="product-footer">
               <div class="product-price">
-                <span class="price-current">&#8377;2,499</span>
+                <span class="price-current">&#8377;399</span>
               </div>
-              <button class="product-cart-btn" onclick="addToCart('Gold Herringbone Chain', 2499)" id="cart-3" aria-label="Add to cart">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-category="accessories" data-delay="300">
-          <div class="product-img-wrap">
-            <img src="product_accessories.jpg" alt="Tortoise Shell Sunglasses" loading="lazy" />
-            <div class="product-img-overlay">
-              <button class="quick-add-btn" onclick="addToCart('Tortoise Shell Sunglasses', 1899)" id="qa-4">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Quick Add
-              </button>
-            </div>
-            <div class="product-badge exclusive">Exclusive</div>
-          </div>
-          <div class="product-info">
-            <div class="product-category">Accessories</div>
-            <h3 class="product-name">Tortoise Shell Sunglasses</h3>
-            <div class="product-footer">
-              <div class="product-price">
-                <span class="price-current">&#8377;1,899</span>
+              <div class="product-view-btn" aria-label="View product details">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <button class="product-cart-btn" onclick="addToCart('Tortoise Shell Sunglasses', 1899)" id="cart-4" aria-label="Add to cart">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-category="frames" data-delay="400">
-          <div class="product-img-wrap">
-            <img src="collection_banner.jpg" alt="Gallery Wall Bundle" loading="lazy" />
-            <div class="product-img-overlay">
-              <button class="quick-add-btn" onclick="addToCart('Gallery Wall Bundle', 3999)" id="qa-5">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Quick Add
-              </button>
-            </div>
-            <div class="product-badge">Bundle</div>
-          </div>
-          <div class="product-info">
-            <div class="product-category">Frames</div>
-            <h3 class="product-name">Gallery Wall Bundle</h3>
-            <div class="product-footer">
-              <div class="product-price">
-                <span class="price-current">&#8377;3,999</span>
-                <span class="price-original">&#8377;5,499</span>
-              </div>
-              <button class="product-cart-btn" onclick="addToCart('Gallery Wall Bundle', 3999)" id="cart-5" aria-label="Add to cart">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-category="jewelry" data-delay="500">
-          <div class="product-img-wrap">
-            <img src="product_jewelry.jpg" alt="Minimalist Gold Ring" loading="lazy" />
-            <div class="product-img-overlay">
-              <button class="quick-add-btn" onclick="addToCart('Minimalist Gold Ring', 1299)" id="qa-6">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Quick Add
-              </button>
-            </div>
-          </div>
-          <div class="product-info">
-            <div class="product-category">Jewelry</div>
-            <h3 class="product-name">Minimalist Gold Ring</h3>
-            <div class="product-footer">
-              <div class="product-price">
-                <span class="price-current">&#8377;1,299</span>
-              </div>
-              <button class="product-cart-btn" onclick="addToCart('Minimalist Gold Ring', 1299)" id="cart-6" aria-label="Add to cart">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </button>
             </div>
           </div>
         </div>
@@ -532,7 +515,7 @@
         <div class="contact-content">
           <div class="section-badge">Get in Touch</div>
           <h2 class="section-title">Ready to Order?</h2>
-          <p class="contact-body">All orders are custom — DM us on Instagram or fill the form. Payment is made at delivery confirmation.</p>
+          <p class="contact-body">All orders are custom — DM us on Instagram or fill the form. Payment is made via UPI or online link on order confirmation.</p>
           <div class="contact-links">
             <a href="https://instagram.com/vogue.frames._" target="_blank" class="contact-social-link" id="contact-ig">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -604,7 +587,7 @@
         </div>
         <div class="footer-links-group">
           <h4 class="footer-heading">Policy</h4>
-          <p class="footer-policy-note">Payment is non-refundable once order is accepted or refused at time of delivery. All pieces are custom made to order.</p>
+          <p class="footer-policy-note">Payment is non-refundable once custom production begins. All pieces are custom made to order.</p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -635,8 +618,8 @@
         <span>Total</span>
         <span id="cartTotal">&#8377;0</span>
       </div>
-      <a href="#contact" class="btn btn-primary liquid-btn full-width" onclick="toggleCart()" id="checkout-btn">
-        <span>Proceed to Order</span>
+      <a href="checkout.html" class="btn btn-primary liquid-btn full-width" id="checkout-btn">
+        <span>Proceed to Checkout</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -648,6 +631,8 @@
     <span id="toastMsg">Added to cart!</span>
   </div>
 
+  <script src="products-data.js"></script>
+  <script src="cart.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

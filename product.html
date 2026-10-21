@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="vogue.frames._ — Premium custom frames, posters & jewelry. Shop our curated collection." />
+  <title>Product — vogue.frames._</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="product.css" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" id="nav-logo-link">
+        <div class="logo-mark">VF</div>
+        <span class="logo-text">vogue.frames._</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#collections" class="nav-link">Collections</a></li>
+        <li><a href="index.html#products" class="nav-link">Shop</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="search-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="nav-icon-btn" id="cart-btn" aria-label="Cart" onclick="toggleCart()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobile()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="index.html#collections" class="mobile-link" onclick="closeMobile()">Collections</a>
+      <a href="index.html#products" class="mobile-link" onclick="closeMobile()">Shop</a>
+      <a href="index.html#about" class="mobile-link" onclick="closeMobile()">About</a>
+      <a href="index.html#contact" class="mobile-link" onclick="closeMobile()">Contact</a>
+      <a href="index.html#contact" class="mobile-link mobile-cta" onclick="closeMobile()">DM to Order</a>
+    </div>
+  </div>
+
+  <!-- ========== PRODUCT PAGE ========== -->
+  <main class="product-page" id="productPage">
+
+    <!-- Breadcrumb Bar with Back Option -->
+    <div class="breadcrumb-bar">
+      <div class="container">
+        <div class="breadcrumb-inner">
+          <a href="index.html#products" class="back-btn-pill" id="backBtn" onclick="goBack(event)" aria-label="Go back to shop">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back to Shop</span>
+          </a>
+          <span class="bc-divider"></span>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" class="bc-link">Home</a>
+            <span class="bc-sep">›</span>
+            <a href="index.html#products" class="bc-link">Shop</a>
+            <span class="bc-sep">›</span>
+            <span class="bc-current" id="bcProductName">Product</span>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Product Layout -->
+    <div class="container">
+      <div class="pd-layout">
+
+        <!-- LEFT: Image Gallery -->
+        <div class="pd-gallery">
+          <div class="pd-img-main-wrap" id="pdMainImgWrap">
+            <img src="" alt="" class="pd-img-main" id="pdMainImg" />
+            <div class="pd-img-zoom-hint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              Click to zoom
+            </div>
+          </div>
+          <div class="pd-thumbnails" id="pdThumbnails"></div>
+        </div>
+
+        <!-- RIGHT: Product Details -->
+        <div class="pd-details">
+
+          <!-- Category + Badge -->
+          <div class="pd-meta">
+            <span class="pd-category" id="pdCategory">Category</span>
+            <span class="pd-badge" id="pdBadge">Badge</span>
+          </div>
+
+          <!-- Name -->
+          <h1 class="pd-name" id="pdName">Product Name</h1>
+
+          <!-- Rating -->
+          <div class="pd-rating-row">
+            <div class="pd-stars" id="pdStars"></div>
+            <span class="pd-rating-num" id="pdRatingNum">0.0</span>
+            <span class="pd-review-count" id="pdReviewCount">(0 reviews)</span>
+          </div>
+
+          <!-- Price -->
+          <div class="pd-price-block">
+            <span class="pd-price" id="pdPrice">₹0</span>
+            <span class="pd-orig-price" id="pdOrigPrice"></span>
+            <span class="pd-tax-note">Incl. of all taxes</span>
+          </div>
+
+          <!-- Highlights -->
+          <div class="pd-highlights">
+            <h3 class="pd-section-title">What's Included & Highlights</h3>
+            <ul class="pd-highlights-list" id="pdHighlights"></ul>
+          </div>
+
+          <!-- Divider -->
+          <div class="pd-divider"></div>
+
+          <!-- CTA Buttons -->
+          <div class="pd-cta">
+            <button type="button" class="btn pd-add-btn" id="pdAddToCart" onclick="window.pdAddToCart()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Add to Cart</span>
+            </button>
+            <button type="button" class="btn btn-primary liquid-btn pd-buy-btn" id="pdBuyNow" onclick="window.pdBuyNow()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span>Buy Now</span>
+            </button>
+          </div>
+
+          <!-- Trust Pills -->
+          <div class="pd-trust">
+            <div class="trust-pill trust-pill-gold" id="pdCustomTrustPill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>100% Fully Customizable</span>
+            </div>
+            <div class="trust-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Made to Order</span>
+            </div>
+            <div class="trust-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <span>Secure Checkout</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ========== SPECS TABLE ========== -->
+      <div class="pd-specs-section">
+        <h2 class="pd-section-heading">Product Details</h2>
+        <div class="pd-specs-table" id="pdSpecsTable"></div>
+      </div>
+
+      <!-- ========== DESCRIPTION ========== -->
+      <div class="pd-desc-section">
+        <h2 class="pd-section-heading">About this Product</h2>
+        <p class="pd-description" id="pdDescription"></p>
+      </div>
+
+      <!-- ========== REVIEWS ========== -->
+      <div class="pd-reviews-section">
+        <div class="pd-reviews-header">
+          <h2 class="pd-section-heading">Customer Reviews</h2>
+          <div class="pd-reviews-summary">
+            <div class="pd-rating-big" id="pdRatingBig">0.0</div>
+            <div>
+              <div class="pd-stars-big" id="pdStarsBig"></div>
+              <div class="pd-reviews-total" id="pdReviewsTotal">0 reviews</div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-reviews-grid" id="pdReviewsGrid"></div>
+      </div>
+
+      <!-- ========== BACK TO SHOP ========== -->
+      <div class="pd-back-row">
+        <a href="index.html#products" class="btn btn-glass pd-back-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back to Shop</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-mark">VF</div>
+            <span class="logo-text">vogue.frames._</span>
+          </div>
+          <p class="footer-tagline">Custom Frames | Posters &#128309; | Jewelry &#128142;<br/>Transforming spaces &amp; styles with premium crafted pieces. &#10024;</p>
+          <a href="https://instagram.com/vogue.frames._" target="_blank" class="footer-ig-link" id="footer-ig">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @vogue.frames._
+          </a>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Shop</h4>
+          <a href="index.html#products" class="footer-link">Custom Frames</a>
+          <a href="index.html#products" class="footer-link">Art Posters</a>
+          <a href="index.html#products" class="footer-link">Jewelry</a>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Info</h4>
+          <a href="index.html#about" class="footer-link">About Us</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+          <a href="index.html#contact" class="footer-link">Custom Orders</a>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Policy</h4>
+          <p class="footer-policy-note">Payment is non-refundable once custom production begins. All pieces are custom made to order.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&#169; 2025 vogue.frames._ — All rights reserved.</span>
+        <span>Made with &#10022; for premium spaces</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== CART DRAWER ========== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Cart</h3>
+      <button class="cart-close" onclick="toggleCart()" id="cart-close-btn" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <p>Your cart is empty</p>
+        <span>Add some premium pieces!</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">&#8377;0</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary liquid-btn full-width" id="checkout-btn">
+        <span>Proceed to Checkout</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toastMsg">Added to cart!</span>
+  </div>
+
+  <!-- Image Lightbox -->
+  <div class="pd-lightbox" id="pdLightbox" onclick="closeLightbox()">
+    <button class="pd-lightbox-close" onclick="closeLightbox()" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img src="" alt="" class="pd-lightbox-img" id="pdLightboxImg" onclick="event.stopPropagation()" />
+  </div>
+
+  <script src="products-data.js"></script>
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="product.js"></script>
+</body>
+</html>

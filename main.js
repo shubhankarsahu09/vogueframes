@@ -5,39 +5,6 @@
 
 'use strict';
 
-// ============ CUSTOM CURSOR ============
-const cursor = document.getElementById('cursor');
-const cursorFollower = document.getElementById('cursorFollower');
-let mouseX = 0, mouseY = 0;
-let followerX = 0, followerY = 0;
-
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top  = mouseY + 'px';
-});
-
-function animateCursor() {
-  followerX += (mouseX - followerX) * 0.1;
-  followerY += (mouseY - followerY) * 0.1;
-  cursorFollower.style.left = followerX + 'px';
-  cursorFollower.style.top  = followerY + 'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-// Hide cursor when leaving window
-document.addEventListener('mouseleave', () => {
-  cursor.style.opacity = '0';
-  cursorFollower.style.opacity = '0';
-});
-document.addEventListener('mouseenter', () => {
-  cursor.style.opacity = '1';
-  cursorFollower.style.opacity = '1';
-});
-
-
 // ============ NAVBAR SCROLL ============
 const nav = document.getElementById('nav');
 
@@ -84,6 +51,9 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
+// Expose globally for product.js
+window.revealObserver = revealObserver;
+
 reveals.forEach(el => revealObserver.observe(el));
 
 
@@ -114,86 +84,8 @@ filterPills.forEach(pill => {
 });
 
 
-// ============ CART ============
-let cart = [];
-
-function toggleCart() {
-  const drawer  = document.getElementById('cartDrawer');
-  const overlay = document.getElementById('cartOverlay');
-  drawer.classList.toggle('open');
-  overlay.classList.toggle('open');
-  document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
-}
-
-function addToCart(name, price) {
-  const existing = cart.find(i => i.name === name);
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({ name, price, qty: 1 });
-  }
-  renderCart();
-  showToast(`${name} added to cart!`);
-  bumpBadge();
-}
-
-function removeFromCart(name) {
-  cart = cart.filter(i => i.name !== name);
-  renderCart();
-  bumpBadge();
-}
-
-function renderCart() {
-  const cartItemsEl = document.getElementById('cartItems');
-  const cartEmptyEl = document.getElementById('cartEmpty');
-  const cartTotalEl = document.getElementById('cartTotal');
-  const badgeEl     = document.getElementById('cart-badge');
-  const footerEl    = document.getElementById('cartFooter');
-
-  const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-  const count = cart.reduce((sum, i) => sum + i.qty, 0);
-
-  badgeEl.textContent = count;
-  cartTotalEl.textContent = '\u20B9' + total.toLocaleString('en-IN');
-
-  // Show/hide empty state
-  if (cart.length === 0) {
-    cartEmptyEl.style.display = 'flex';
-    footerEl.style.display = 'none';
-  } else {
-    cartEmptyEl.style.display = 'none';
-    footerEl.style.display = 'flex';
-  }
-
-  // Remove existing items (but not the empty el)
-  const existingItems = cartItemsEl.querySelectorAll('.cart-item');
-  existingItems.forEach(el => el.remove());
-
-  // Re-render
-  cart.forEach(item => {
-    const el = document.createElement('div');
-    el.className = 'cart-item';
-    el.innerHTML = `
-      <div class="cart-item-info">
-        <div class="cart-item-name">${item.name}${item.qty > 1 ? ' &#215;' + item.qty : ''}</div>
-        <div class="cart-item-price">&#8377;${(item.price * item.qty).toLocaleString('en-IN')}</div>
-      </div>
-      <button class="cart-item-remove" onclick="removeFromCart('${item.name}')" aria-label="Remove">&#215;</button>
-    `;
-    cartItemsEl.appendChild(el);
-  });
-}
-
-function bumpBadge() {
-  const badge = document.getElementById('cart-badge');
-  badge.classList.remove('bump');
-  badge.offsetHeight; // reflow
-  badge.classList.add('bump');
-}
-
-// Initialize cart footer hidden
-document.getElementById('cartFooter').style.display = 'none';
-
+// ============ CART DELEGATION (Handled by cart.js) ============
+// VFCart manages localStorage persistence and multi-product cart functionality.
 
 // ============ TOAST ============
 let toastTimer;
@@ -327,8 +219,22 @@ document.getElementById('search-btn').addEventListener('click', () => {
 });
 
 
+// ============ PRODUCT CARD NAVIGATION ============
+document.querySelectorAll('.product-card[data-url]').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    const url = card.dataset.url;
+    if (url) {
+      window.location.href = url;
+    }
+  });
+});
+
+
 // ============ INIT ============
-renderCart();
+if (typeof window.renderCart === 'function') {
+  window.renderCart();
+}
 handleNavScroll();
 
 console.log('%c VOGUE FRAMES ', 'background: #c9a96e; color: #000; font-size: 14px; font-weight: bold; padding: 6px 16px; border-radius: 6px;');

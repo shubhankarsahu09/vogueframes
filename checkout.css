@@ -941,6 +941,131 @@
   gap: 10px;
 }
 
+/* ---- COMPREHENSIVE MOBILE OPTIMIZATIONS FOR ALL PHONES ---- */
+@media (max-width: 768px) {
+  /* Prevent iOS Safari input auto-zoom */
+  input, select, textarea, .form-input, .form-textarea, .form-select {
+    font-size: 16px !important;
+  }
+
+  .checkout-header {
+    padding: 12px 0;
+  }
+  .checkout-header-inner {
+    padding: 0 10px;
+    gap: 10px;
+  }
+  .checkout-security-badge span {
+    font-size: 11px;
+  }
+
+  .checkout-main {
+    padding: 16px 0 60px;
+  }
+  .checkout-page-title-row {
+    margin-bottom: 20px;
+  }
+  .checkout-page-title {
+    font-size: 26px;
+  }
+  .checkout-page-subtitle {
+    font-size: 13.5px;
+  }
+
+  .form-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+  }
+  .form-card-header {
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    gap: 12px;
+  }
+  .form-card-title {
+    font-size: 16px;
+  }
+
+  .summary-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  /* Payment options */
+  .payment-options-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .payment-option-card {
+    padding: 14px 16px;
+    touch-action: manipulation;
+  }
+
+  /* Place Order button */
+  .btn-place-order {
+    height: 52px;
+    font-size: 15.5px;
+    width: 100%;
+    justify-content: center;
+    touch-action: manipulation;
+  }
+
+  /* Modal on Mobile */
+  .order-modal-card {
+    width: calc(100vw - 28px);
+    max-height: 90svh;
+    max-height: 90dvh;
+    max-height: 90vh;
+    padding: 24px 16px;
+    border-radius: var(--radius-lg);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .modal-title {
+    font-size: 20px;
+  }
+  .order-id-pill {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 580px) {
+  .checkout-security-badge span {
+    display: none;
+  }
+  .checkout-security-badge {
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-header-inner {
+    padding: 0 6px;
+    gap: 8px;
+  }
+  .checkout-back-link {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .summary-img-wrap {
+    width: 60px;
+    height: 60px;
+  }
+  .summary-product-name {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 380px) {
+  .checkout-security-badge {
+    display: none;
+  }
+  .checkout-back-link span {
+    font-size: 11.5px;
+  }
+}
+
 /* ---- CURSOR VISIBILITY GUARANTEE ---- */
 html, body {
   cursor: default !important;
@@ -958,3 +1083,4 @@ a, button, .btn, .payment-option, .qty-btn, .form-select, .checkout-back-link, .
 .cursor-follower {
   display: none !important;
 }
+

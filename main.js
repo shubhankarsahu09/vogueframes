@@ -24,16 +24,24 @@ const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
 function toggleMobile() {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  if (hamburger) hamburger.classList.toggle('open');
+  if (mobileMenu) mobileMenu.classList.toggle('open');
+  document.body.style.overflow = (mobileMenu && mobileMenu.classList.contains('open')) ? 'hidden' : '';
 }
 
 function closeMobile() {
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
+  if (hamburger) hamburger.classList.remove('open');
+  if (mobileMenu) mobileMenu.classList.remove('open');
   document.body.style.overflow = '';
 }
+
+// Close mobile menu or cart on escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeMobile();
+    if (typeof closeCart === 'function') closeCart();
+  }
+});
 
 
 // ============ SCROLL REVEAL ============
@@ -227,9 +235,12 @@ collectionCards.forEach(card => {
 
 
 // ============ SEARCH BUTTON (placeholder) ============
-document.getElementById('search-btn').addEventListener('click', () => {
-  showToast('Search coming soon!');
-});
+const searchBtn = document.getElementById('search-btn');
+if (searchBtn) {
+  searchBtn.addEventListener('click', () => {
+    showToast('Search coming soon!');
+  });
+}
 
 
 // ============ PRODUCT CARD NAVIGATION ============

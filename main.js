@@ -102,32 +102,45 @@ function showToast(msg) {
 }
 
 
-// ============ CONTACT FORM ============
-function handleSubmit(e) {
+// ============ CONTACT FORM (Web3Forms Integration) ============
+async function handleSubmit(e) {
   e.preventDefault();
+  const form = document.getElementById('contactForm');
   const btn = document.getElementById('submit-form-btn');
   const originalContent = btn.innerHTML;
 
   btn.innerHTML = '<span>Sending...</span>';
   btn.disabled = true;
 
-  // Simulate async
-  setTimeout(() => {
-    btn.innerHTML = `
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      <span>Message Sent!</span>
-    `;
-    btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+  try {
+    const formData = new FormData(form);
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    });
+    const result = await response.json();
 
-    showToast('Message sent! We will get back to you shortly.');
-
+    if (result.success) {
+      btn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Message Sent!</span>
+      `;
+      btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+      showToast('Message delivered! We will reach out shortly.');
+      form.reset();
+    } else {
+      showToast(result.message || 'Something went wrong. Please try again.');
+    }
+  } catch (err) {
+    console.error('Web3Forms Error:', err);
+    showToast('Network error. Please try again or reach out on Instagram.');
+  } finally {
     setTimeout(() => {
       btn.innerHTML = originalContent;
       btn.style.background = '';
       btn.disabled = false;
-      document.getElementById('contactForm').reset();
-    }, 3500);
-  }, 1500);
+    }, 4000);
+  }
 }
 
 

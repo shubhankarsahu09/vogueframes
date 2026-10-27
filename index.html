@@ -702,7 +702,11 @@
             </a>
           </div>
         </div>
-        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="access_key" value="51102e93-d0d1-4f5e-91c9-f6a7c0ba0a1b" />
+          <input type="hidden" name="subject" value="New Contact Inquiry — Vogue Frames" />
+          <input type="hidden" name="from_name" value="Vogue Frames Website" />
+          <input type="checkbox" name="botcheck" style="display: none;" />
           <div class="form-group">
             <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required />
           </div>

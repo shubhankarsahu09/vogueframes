@@ -244,7 +244,7 @@ const PRODUCTS_DATA = {
 
   'jhumka': {
     id: 'jhumka',
-    name: 'Jhumka',
+    name: 'Antique Gold Jhumka',
     category: 'Jewelry',
     categoryFilter: 'jewelry',
     customizable: false,
@@ -279,5 +279,291 @@ const PRODUCTS_DATA = {
       { name: 'Kritika N.', handle: '@kritika_n', initials: 'KN', rating: 5, text: 'Wore these for Diwali with my saree and received endless compliments! Outstanding quality for ₹349.' },
       { name: 'Tanvi M.', handle: '@tanvi.m', initials: 'TM', rating: 5, text: 'The detailing is so intricate and the finishing is top-notch. Fast delivery and secure packaging too. 10/10!' }
     ]
+  },
+
+  'pink-kundan-jhumka': {
+    id: 'pink-kundan-jhumka',
+    name: 'Pink Kundan Chandbali Jhumka',
+    category: 'Jewelry',
+    categoryFilter: 'jewelry',
+    customizable: false,
+    price: 329,
+    originalPrice: null,
+    badge: 'Trending',
+    badgeType: 'luxury',
+    image: 'product_pink_jhumka.jpg',
+    images: ['product_pink_jhumka.jpg'],
+    rating: 4.9,
+    reviewCount: 19,
+    description: 'Stun at every celebration with our Pink Kundan Chandbali Jhumka earrings. Designed with blooming floral studs, intricate crescent Chandbali frameworks inlaid with radiant Kundan gems, and finished with pastel blush pink beads and delicate seed pearls. A graceful statement piece made for festive celebrations and weddings.',
+    highlights: [
+      'Gold-plated floral motif stud with shimmering clear Kundan stones',
+      'Curved Chandbali crescent design with exquisite open filigree',
+      'Dangling blush pink beads accented with delicate seed pearls',
+      'Lightweight and comfortable for all-day celebrations and events',
+      'Push-back closure for secure, hassle-free wear',
+      'Comes packaged in a protective signature keepsake pouch'
+    ],
+    specs: {
+      'Pair Contains': '1 Pair of Chandbali Jhumka Earrings',
+      'Craft Style': 'Kundan Floral Chandbali Jhumka',
+      'Finish': 'Gold-Plated Brass',
+      'Stones / Beads': 'Clear Kundan, Blush Pink Beads, Seed Pearls',
+      'Closure Type': 'Push-Back Post',
+      'Occasion': 'Weddings, Sangeet, Festive Celebrations, Parties',
+      'Order Type': 'Handcrafted Artisan Piece'
+    },
+    reviews: [
+      { name: 'Rhea S.', handle: '@rhea_style', initials: 'RS', rating: 5, text: 'The pink beads with the gold and kundan look even prettier in person! Super lightweight and didn’t hurt my ears at all during the wedding.' },
+      { name: 'Isha G.', handle: '@ishagupta.ig', initials: 'IG', rating: 5, text: 'Got this for ₹329 and it honestly looks like it costs ₹1,500+. The finishing on the kundan work is flawless.' },
+      { name: 'Divya P.', handle: '@divya.p', initials: 'DP', rating: 5, text: 'Matched perfectly with my pastel lehenga! Received so many compliments. Vogue Frames jewelry collection is unmatched.' }
+    ]
+  },
+
+  'heart-necklace': {
+    id: 'heart-necklace',
+    name: 'Golden Heart Pendant Necklace',
+    category: 'Jewelry',
+    categoryFilter: 'jewelry',
+    customizable: false,
+    price: 349,
+    originalPrice: null,
+    badge: 'Trending',
+    badgeType: 'luxury',
+    image: 'product_heart_necklace.jpg',
+    images: ['product_heart_necklace.jpg'],
+    rating: 5.0,
+    reviewCount: 24,
+    description: 'A timeless symbol of modern elegance. Our Golden Heart Pendant Necklace features a sleek, hollow sculpted heart pendant floating effortlessly along an ultra-fine gold-tone snake collar chain. Minimalist yet eye-catching, this versatile piece is designed for everyday wear, date nights, and layered aesthetic looks.',
+    highlights: [
+      'Sculpted fluid open-heart floating pendant design',
+      'Ultra-sleek, smooth gold-tone snake chain that sits gracefully on the collarbone',
+      'Tarnish-resistant anti-fade gold plating with high-polish mirror finish',
+      'Adjustable clasp extension for customized chain length',
+      'Hypoallergenic & skin-friendly lightweight build for daily wear',
+      'Packaged in an elegant Vogue Frames jewelry gift pouch'
+    ],
+    specs: {
+      'Piece Contains': '1 Floating Heart Necklace with Snake Chain',
+      'Chain Type': 'Smooth Flat Snake Chain (Adjustable)',
+      'Finish': '18K Gold Plated High Polish',
+      'Pendant Motif': 'Minimalist Floating Open Heart',
+      'Closure': 'Secure Lobster Clasp with Extender',
+      'Style': 'Clean Girl Aesthetic / Minimalist Luxury',
+      'Order Type': 'Curated Ready-to-Wear Jewelry'
+    },
+    reviews: [
+      { name: 'Kavya S.', handle: '@kavya_aesthetic', initials: 'KS', rating: 5, text: 'This necklace is everything! Looks so classy and minimalist. The snake chain is silky smooth and catches the light beautifully.' },
+      { name: 'Natasha M.', handle: '@natasham', initials: 'NM', rating: 5, text: 'Wore it every day for two weeks straight — no tarnishing, super comfortable, and goes with literally every outfit.' },
+      { name: 'Sneha T.', handle: '@sneha.t', initials: 'ST', rating: 5, text: 'The heart pendant is so chic and dainty! Packaging was lovely too. Best impulse buy ever for ₹349.' }
+    ]
+  },
+
+  'jewellery-set': {
+    id: 'jewellery-set',
+    name: 'Travel Jewellery Box Set',
+    category: 'Jewelry',
+    categoryFilter: 'jewelry',
+    customizable: false,
+    price: 449,
+    originalPrice: null,
+    badge: 'Trending',
+    badgeType: 'luxury',
+    image: 'product_jewellery_set.jpg',
+    images: ['product_jewellery_set.jpg'],
+    rating: 4.9,
+    reviewCount: 36,
+    description: 'Keep your precious jewelry and accessories exquisitely organized wherever you go. Our Travel Jewellery Box Set is crafted from premium textured blush pink leatherette with a secure zip-around closure and plush anti-tarnish velvet interior. Thoughtfully partitioned with 3 tangle-free necklace hooks, an elastic catch pouch, 6 cushioned ring and earring rolls, and 4 customizable divided compartments to protect your pieces in style.',
+    highlights: [
+      '🌸 Premium textured blush pink leatherette exterior with gold-tone zipper',
+      '🎀 Ultra-soft anti-scratch velvet interior preserves jewelry shine & finish',
+      '3 tangle-free necklace hanging hooks with elastic catch pocket',
+      '6 cushioned ring & earring rolls + 4 versatile divider compartments',
+      'Compact, lightweight palm size (approx. 10 × 10 × 5 cm) — fits easily in handbags',
+      'Secure zip-around closure ensures items stay safely in place during travel',
+      'Arrives packaged in signature Vogue Frames gift-ready presentation'
+    ],
+    specs: {
+      'Product Type': 'Travel Jewellery Organizer Box & Display Set',
+      'Exterior Material': 'Textured PU Leatherette (Water-resistant)',
+      'Interior Lining': 'Plush Anti-Scratch Soft Velvet',
+      'Color': 'Pastel Blush Pink',
+      'Closure Type': 'Reinforced All-Around Metal Zipper',
+      'Compartments': '3 Necklace Hooks, 1 Elastic Pocket, 6 Ring Slots, 4 Grid Sections',
+      'Dimensions': '10 cm × 10 cm × 5 cm (Approx.)',
+      'Suitable For': 'Rings, Earrings, Pendants, Delicate Necklaces, Studs',
+      'Occasion': 'Everyday Vanity Organization, Travel, Festive Gifting',
+      'Order Type': 'Curated Ready-to-Ship Luxury Item'
+    },
+    reviews: [
+      { name: 'Rhea K.', handle: '@rhea.k', initials: 'RK', rating: 5, text: 'This little jewelry box is an absolute game-changer! Kept all my chains completely tangle-free during my trip and fits right into my purse.' },
+      { name: 'Megha S.', handle: '@megha_sharma', initials: 'MS', rating: 5, text: 'The pastel pink color and velvet interior look so aesthetic on my dressing table. Honestly feels like a ₹1,200+ boutique piece for just ₹449!' },
+      { name: 'Ayesha P.', handle: '@ayeshap_style', initials: 'AP', rating: 5, text: 'Ordered this after seeing it on their feed. Perfect layout for rings, earrings, and pendants. Packaging was super chic too.' }
+    ]
+  },
+
+  'silver-jhumka': {
+    id: 'silver-jhumka',
+    name: 'Oxidized Silver Jhumka',
+    category: 'Jewelry',
+    categoryFilter: 'jewelry',
+    customizable: false,
+    price: 349,
+    originalPrice: null,
+    badge: 'Artisan',
+    badgeType: 'luxury',
+    image: 'silver-jhumka.jpg',
+    images: ['silver-jhumka.jpg'],
+    rating: 4.9,
+    reviewCount: 22,
+    description: 'Embrace timeless bohemian elegance with our handcrafted Oxidized Silver Jhumka earrings. Designed with intricately carved mandala chakra studs, antique blackened silver filigree dome drops, and accented with a fringe of delicate white pearl seed beads. A versatile statement piece crafted for festive celebrations, cultural occasions, and everyday ethnic chic.',
+    highlights: [
+      'Authentic antique oxidized silver finish with intricate tribal dome carvings',
+      'Circular mandala chakra stud top with detailed beaded outer border',
+      'Lustrous white pearl seed bead drops that sway with every step',
+      'Lightweight and skin-friendly design for comfortable all-day festive wear',
+      'Secure push-back post closure for easy, reliable wear',
+      'Arrives safely in signature Vogue Frames luxury keepsake pouch'
+    ],
+    specs: {
+      'Pair Contains': '1 Pair of Oxidized Jhumka Earrings',
+      'Craft Style': 'Antique Tribal Oxidized Silver Jhumka',
+      'Finish': 'Oxidized German Silver Tone',
+      'Stones / Beads': 'Faux Pearl Seed Beads',
+      'Closure Type': 'Push-Back Post',
+      'Occasion': 'Festive, Wedding, Cultural Celebrations, Daily Ethnic & Fusion',
+      'Order Type': 'Handcrafted Artisan Piece'
+    },
+    reviews: [
+      { name: 'Khushi M.', handle: '@khushi.ethnic', initials: 'KM', rating: 5, text: 'The oxidized silver detailing is gorgeous! They are so lightweight and the tiny pearls give them such a graceful festive look.' },
+      { name: 'Bhavna T.', handle: '@bhavna_t', initials: 'BT', rating: 5, text: 'Wore these with a simple white kurti and received so many compliments. Perfect size and finish for ₹349.' },
+      { name: 'Saloni D.', handle: '@saloni.d', initials: 'SD', rating: 5, text: 'Antique finish looks super authentic. Fast delivery and high quality packaging as always from Vogue Frames!' }
+    ]
+  },
+
+  'porsche-mousepad': {
+    id: 'porsche-mousepad',
+    name: 'Porsche 911 GT3 Wave Desk Mat Mousepad',
+    category: 'Mousepad',
+    categoryFilter: 'mousepad',
+    customizable: true,
+    price: 548,
+    originalPrice: null,
+    badge: 'New Drop',
+    badgeType: 'new',
+    image: 'porsche-mousepad.jpg',
+    images: ['porsche-mousepad.jpg'],
+    rating: 5.0,
+    reviewCount: 18,
+    description: 'Level up your gaming setup and desk aesthetic with our extended Porsche 911 GT3 RS Japanese Wave Desk Mat Mousepad. Blending the high-octane silhouette of the Porsche 911 GT3 RS with iconic Great Wave Japanese woodblock art in crisp monochrome contrast. Engineered with ultra-smooth micro-woven cloth for pixel-precise mouse tracking, water-repellent coating, anti-fray stitched borders, and a textured non-slip rubber base. 100% customizable: swap cars or add personalized gamer tags upon request.',
+    highlights: [
+      '🎨 100% Fully Customizable — Swap cars, choose custom artwork or add personal gamer tags',
+      '🏁 High-definition monochrome Porsche 911 GT3 RS + Japanese Great Wave print',
+      '⚡ Ultra-smooth micro-woven cloth surface optimized for gaming optical & laser sensors',
+      '🛡️ 360° precision anti-fray stitched edge borders prevent peeling and wear',
+      '🛑 Heavy-grip non-slip natural rubber base stays firmly anchored on any desk',
+      '💧 Water-resistant spill-proof nano coating — effortlessly wiped clean',
+      '📏 Extended XXL desk size: easily accommodates full mechanical keyboard and mouse'
+    ],
+    specs: {
+      'Category': 'Mousepad / Gaming Desk Mat',
+      'Design Theme': 'Porsche 911 GT3 RS — Japanese Wave Edition (Customizable)',
+      'Surface Type': 'High-Density Speed Micro-Weave Fabric',
+      'Base Material': 'Anti-Slip Textured Natural Eco-Rubber',
+      'Edge Finish': 'Reinforced 360° Anti-Fray Stitched Hem',
+      'Dimensions': 'Extended Desk Mat Size (Approx. 800 × 300 × 3 mm)',
+      'Water Resistance': 'Spill-Resistant Nano Coating',
+      'Order Type': 'Curated Ready-to-Ship / Custom to Order'
+    },
+    reviews: [
+      { name: 'Kabir V.', handle: '@kabir_setups', initials: 'KV', rating: 5, text: 'The glide on this desk mat is unreal! Matches my monochrome white setup and mechanical keyboard so well. Best mousepad for ₹548!' },
+      { name: 'Arman Z.', handle: '@arman.gt3', initials: 'AZ', rating: 5, text: 'The Porsche print quality is insanely sharp and the stitched edges feel super premium. Definitely worth every rupee.' },
+      { name: 'Tanmay R.', handle: '@tanmay_tech', initials: 'TR', rating: 5, text: 'Spilled coffee on it the second day and it wiped off without leaving any stain. High quality rubber grip underneath too.' }
+    ]
+  },
+
+  'gt3-rennsport-mousepad': {
+    id: 'gt3-rennsport-mousepad',
+    name: 'Porsche GT3 R Rennsport Desk Mat',
+    category: 'Mousepad',
+    categoryFilter: 'mousepad',
+    customizable: true,
+    price: 399,
+    originalPrice: null,
+    badge: 'Trending',
+    badgeType: 'new',
+    image: 'gt3-rennsport-mousepad.jpg',
+    images: ['gt3-rennsport-mousepad.jpg'],
+    rating: 4.9,
+    reviewCount: 15,
+    description: 'Channel pure track-day adrenaline with the Porsche 911 GT3 R Rennsport Desk Mat Mousepad. Featuring aggressive race-bred livery, bold GT3-911 typography, and deep crimson contrast against a dark backdrop. Engineered with a high-density speed micro-weave fabric for ultra-smooth mouse glide, reinforced anti-fray stitched borders, and an anti-slip natural rubber base. 100% customizable: swap racing numbers, colors, or add custom gamer tags.',
+    highlights: [
+      '🎨 100% Fully Customizable — Swap car colors, racing numbers, or add custom gamer tags',
+      '🏎️ Porsche 911 GT3 R Rennsport bold racing livery and typography',
+      '⚡ High-density speed micro-weave cloth optimized for gaming sensors',
+      '🛡️ 360° reinforced anti-fray stitched edges for long-lasting durability',
+      '🛑 Heavy-duty non-slip natural rubber base prevents shifting',
+      '💧 Water-repellent easy-wipe surface for hassle-free maintenance'
+    ],
+    specs: {
+      'Category': 'Mousepad / Gaming Desk Mat',
+      'Design Theme': 'Porsche 911 GT3 R Rennsport (Customizable)',
+      'Surface Type': 'High-Density Speed Micro-Weave Fabric',
+      'Base Material': 'Anti-Slip Textured Natural Eco-Rubber',
+      'Edge Finish': 'Reinforced 360° Anti-Fray Stitched Hem',
+      'Dimensions': 'Extended Desk Mat Size (Approx. 800 × 300 × 3 mm)',
+      'Water Resistance': 'Spill-Resistant Nano Coating',
+      'Order Type': 'Curated Ready-to-Ship / Custom to Order'
+    },
+    reviews: [
+      { name: 'Dev P.', handle: '@dev_racing', initials: 'DP', rating: 5, text: 'The bold red GT3 lettering looks so fierce on my desk. Quality is top tier for ₹399!' },
+      { name: 'Siddharth M.', handle: '@sid.gt3', initials: 'SM', rating: 5, text: 'Clean finish and the mouse glides effortlessly. Colors are punchy and vivid.' },
+      { name: 'Nikhil K.', handle: '@nikhil_setup', initials: 'NK', rating: 5, text: 'Fits my keyboard and mouse easily. Stitching on the sides is very neat.' }
+    ]
+  },
+
+  'spiderman-mousepad': {
+    id: 'spiderman-mousepad',
+    name: 'Spider-Man Comic Edition Desk Mat',
+    category: 'Mousepad',
+    categoryFilter: 'mousepad',
+    customizable: true,
+    price: 548,
+    originalPrice: null,
+    badge: 'Trending',
+    badgeType: 'new',
+    image: 'spiderman-mousepad.jpg',
+    images: ['spiderman-mousepad.jpg'],
+    rating: 5.0,
+    reviewCount: 24,
+    description: 'Swing into action and transform your workstation with our Spider-Man Comic Edition Gaming Desk Mat Mousepad. Featuring the bold black Spider-Man emblem centered over vintage red comic book action panels. Built with an ultra-smooth high-density micro-woven cloth surface for pixel-perfect mouse tracking, reinforced 360° anti-fray stitched borders, and an anti-slip natural rubber base. 100% customizable: swap heroes, comic scenes, or add personal gamer tags upon request.',
+    highlights: [
+      '🎨 100% Fully Customizable — Swap comic scenes, add gamer tags or request custom superhero art',
+      '🕷️ Iconic black Spider-Man emblem with vintage red comic strip panel collage',
+      '⚡ Ultra-smooth micro-weave speed cloth optimized for optical and laser sensors',
+      '🛡️ 360° precision anti-fray stitched edge borders prevent peeling and wear',
+      '🛑 Heavy-duty textured non-slip natural rubber base stays firmly planted',
+      '💧 Water-resistant spill-proof nano coating — effortlessly wiped clean',
+      '📏 Extended XXL desk size: provides ample room for mechanical keyboard and mouse'
+    ],
+    specs: {
+      'Category': 'Mousepad / Gaming Desk Mat',
+      'Design Theme': 'Spider-Man Vintage Comic Strip (Customizable)',
+      'Surface Type': 'High-Density Speed Micro-Weave Fabric',
+      'Base Material': 'Anti-Slip Textured Natural Eco-Rubber',
+      'Edge Finish': 'Reinforced 360° Anti-Fray Stitched Hem',
+      'Dimensions': 'Extended Desk Mat Size (Approx. 800 × 300 × 3 mm)',
+      'Water Resistance': 'Spill-Resistant Nano Coating',
+      'Order Type': 'Curated Ready-to-Ship / Custom to Order'
+    },
+    reviews: [
+      { name: 'Aditya S.', handle: '@aditya.spidey', initials: 'AS', rating: 5, text: 'The comic book collage details in the background are unbelievable! Perfect red hue that really makes the setup pop.' },
+      { name: 'Varun M.', handle: '@varun_m', initials: 'VM', rating: 5, text: 'Best desk mat I have owned. Smooth glide, solid grip on the table, and high quality print for ₹548.' },
+      { name: 'Rohan G.', handle: '@rohan_gaming', initials: 'RG', rating: 5, text: 'Arrived quickly and looks even better in person. Stitching along the edges is top notch.' }
+    ]
   }
 };
+
+
+
+

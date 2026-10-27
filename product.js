@@ -53,16 +53,20 @@ function renderProduct(product) {
   const mainImg = document.getElementById('pdMainImg');
   mainImg.src = product.image;
   mainImg.alt = product.name;
+  mainImg.onerror = function() {
+    this.onerror = null;
+    this.src = 'product_jewelry.jpg';
+  };
 
   // Lightbox on click
-  document.getElementById('pdMainImgWrap').addEventListener('click', () => openLightbox(product.image, product.name));
+  document.getElementById('pdMainImgWrap').addEventListener('click', () => openLightbox(mainImg.src || product.image, product.name));
 
   // Thumbnails
   const thumbsEl = document.getElementById('pdThumbnails');
   product.images.forEach((img, i) => {
     const thumb = document.createElement('div');
     thumb.className = 'pd-thumb' + (i === 0 ? ' active' : '');
-    thumb.innerHTML = `<img src="${img}" alt="${product.name}" />`;
+    thumb.innerHTML = `<img src="${img}" alt="${product.name}" onerror="this.onerror=null;this.src='product_jewelry.jpg'" />`;
     thumb.addEventListener('click', () => {
       mainImg.src = img;
       document.querySelectorAll('.pd-thumb').forEach(t => t.classList.remove('active'));

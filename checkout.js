@@ -61,7 +61,7 @@ function renderCheckoutItems() {
     itemEl.className = 'summary-product-item';
     itemEl.innerHTML = `
       <div class="summary-img-wrap">
-        <img src="${item.image}" alt="${item.name}" loading="lazy" />
+        <img src="${item.image}" alt="${item.name}" onerror="this.onerror=null;this.src='product_jewelry.jpg'" loading="lazy" />
       </div>
       <div class="summary-product-details">
         <div class="summary-product-top">

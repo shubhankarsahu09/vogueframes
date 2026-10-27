@@ -185,7 +185,7 @@ window.VFCart = (function () {
       el.setAttribute('data-id', item.id);
       el.innerHTML = `
         <div class="cart-item-img-wrap">
-          <img src="${item.image}" alt="${item.name}" loading="lazy" />
+          <img src="${item.image}" alt="${item.name}" onerror="this.onerror=null;this.src='product_jewelry.jpg'" loading="lazy" />
         </div>
         <div class="cart-item-info">
           <div class="cart-item-top">
